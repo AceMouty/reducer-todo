@@ -21,7 +21,7 @@ function Form ({ dispatch }) {
 				value={todoText}
 				onChange={handleChange}
 			/>
-			<button>Submit</button>
+			<button type="submit">Submit</button>
 		</form>
 	)
 }

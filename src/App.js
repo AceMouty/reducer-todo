@@ -10,11 +10,11 @@ import {reducer, initialState} from './reducers/addTodoReducer';
 
 function App() {
 	const [todolist, dispatch] = useReducer(reducer, initialState);
-
+	
 	return (
     <div className="App">
 			<Form dispatch={dispatch}/>
-			<TodoList todos={todolist.todos}/>
+			<TodoList todos={todolist.todos} dispatch={dispatch}/>
     </div>
   );
 }

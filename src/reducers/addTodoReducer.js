@@ -14,17 +14,7 @@ export const reducer = (state, action) => {
 		case "CLEAR_TODOS":
 			return {todos: state.todos.filter(todo => !todo.completed)}
 		case "COMPLETE":
-			console.log("FROM COMPLETE", action.payload)
-			return {todos: state.todos.filter(todo => {
-				if(todo.id === action.payload){
-					console.log("MADE IT TO THE IF", todo)
-					const newCom = !todo.completed
-					console.log(newCom)
-					return {...todo, completed: !todo.completed}
-				} else {
-					return todo
-				}
-			})}
+			return {todos: state.todos.map( todo => todo.id === action.payload ? {...todo, completed: !todo.completed} : todo )}
 		default:
 			return state;
 	}
